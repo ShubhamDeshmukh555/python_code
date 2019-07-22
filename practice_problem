@@ -1,0 +1,28 @@
+l=[20,62,-40,-8,30,-44,-20,-62,33,29]
+negative_list=[]
+positive_list=[]
+l1=[]
+l2=[]
+l.sort()
+print("Sorted given list : ",l)
+for i in range(len(l)):
+    if l[i]<0 :
+        negative_list.append(l[i])
+    else:
+        positive_list.append(l[i])
+print("Negative list : ",negative_list)
+print("Positive list : ",positive_list)
+print("Sum : ",sum(l))
+
+#For common elements in -ve and +ve list
+for i in range (len(positive_list)-1):   
+    for j in range (len(negative_list)-1):
+        if positive_list[i] == -(negative_list[j]):
+            l1.append(positive_list[i])
+            l1.append(negative_list[j])
+            positive_list.pop(i)
+            negative_list.pop(j)
+            break
+l2=positive_list + negative_list
+print("first list : ",l1)
+print("second list : ",l2)
